@@ -1,0 +1,88 @@
+{
+  "user": [
+    {
+      "email": "ruta@gmail.com",
+      "password": "123"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/b7ZVzYr/product-2.jpg",
+      "price": 100,
+      "catagory": "shoes",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/KsMVr26/product-3.jpg",
+      "price": 200,
+      "catagory": "pants",
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/0cMfpcr/product-4.jpg",
+      "catagory": "tshirt",
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/bQ5t8bR/product-5.jpg",
+      "catagory": "shoes",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/bQ5t8bR/product-5.jpg",
+      "catagory": "shoes",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/vVpTyBD/product-6.jpg",
+      "catagory": "tshirt",
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/hR5FGwH/product-7.jpg",
+      "catagory": "shoes",
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "name": "men's wear",
+      "image": "https://i.ibb.co/QfCgdXZ/product-8.jpg",
+      "catagory": "watch",
+      "quantity": 1
+    }
+  ],
+  "catagory": [
+    {
+      "catagoryName": "shoes"
+    },
+    {
+      "catagoryName": "watch"
+    },
+    {
+      "catagoryName": "tshirt"
+    }
+  ],
+  "carts": [
+    {
+      "name": "men's wear",
+      "image": "https://i.ibb.co/bQ5t8bR/product-5.jpg",
+      "quantity": 1,
+      "productId": 5,
+      "id": 1
+    }
+  ]
+}
