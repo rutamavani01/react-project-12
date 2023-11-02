@@ -17,7 +17,6 @@ const ProductDetails = () => {
                 console.log("record not fetch");
                 return false;
             }
-
         } catch (err) {
             console.log(err);
             return false;

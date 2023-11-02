@@ -1,8 +1,21 @@
 {
-  "user": [
+  "admin": [
     {
       "email": "ruta@gmail.com",
-      "password": "123"
+      "password": "123",
+      "id": 1
+    }
+  ],
+  "user": [
+    {
+      "email": "abc@gmail.com",
+      "password": "6565",
+      "id": 2
+    },
+    {
+      "email": "RUTA1@GMAIL.COM",
+      "password": "2224",
+      "id": 3
     }
   ],
   "product": [
@@ -12,7 +25,9 @@
       "image": "https://i.ibb.co/b7ZVzYr/product-2.jpg",
       "price": 100,
       "catagory": "shoes",
-      "quantity": 1
+      "status": "outstock",
+      "marketstatus": "",
+      "Qauntity": 1
     },
     {
       "id": 2,
@@ -20,59 +35,102 @@
       "image": "https://i.ibb.co/KsMVr26/product-3.jpg",
       "price": 200,
       "catagory": "pants",
-      "quantity": 1
+      "marketstatus": "",
+      "status": "",
+      "Qauntity": 1
     },
     {
       "id": 3,
       "name": "men's wear",
       "image": "https://i.ibb.co/0cMfpcr/product-4.jpg",
+      "price": 200,
+      "marketstatus": "",
       "catagory": "tshirt",
-      "quantity": 1
+      "status": "",
+      "Qauntity": 1
     },
     {
       "id": 4,
       "name": "men's wear",
       "image": "https://i.ibb.co/bQ5t8bR/product-5.jpg",
+      "price": 200,
       "catagory": "shoes",
-      "quantity": 1
+      "marketstatus": "",
+      "status": "",
+      "Qauntity": 1
     },
     {
       "id": 5,
       "name": "men's wear",
       "image": "https://i.ibb.co/bQ5t8bR/product-5.jpg",
+      "price": 200,
       "catagory": "shoes",
-      "quantity": 1
+      "marketstatus": "",
+      "status": "",
+      "Qauntity": 1
     },
     {
       "id": 6,
       "name": "men's wear",
       "image": "https://i.ibb.co/vVpTyBD/product-6.jpg",
+      "price": 200,
       "catagory": "tshirt",
-      "quantity": 1
+      "marketstatus": "",
+      "status": "",
+      "Qauntity": 1
     },
     {
       "id": 7,
       "name": "men's wear",
       "image": "https://i.ibb.co/hR5FGwH/product-7.jpg",
+      "price": 200,
       "catagory": "shoes",
-      "quantity": 1
+      "marketstatus": "",
+      "status": "",
+      "Qauntity": 1
     },
     {
       "id": 8,
       "name": "men's wear",
       "image": "https://i.ibb.co/QfCgdXZ/product-8.jpg",
+      "price": 200,
       "catagory": "watch",
-      "quantity": 1
+      "marketstatus": "",
+      "status": "outstock",
+      "Qauntity": 1
+    },
+    {
+      "catagory": "watch",
+      "name": "girl watch",
+      "image": "https://assets.ajio.com/medias/sys_master/root/20230421/VNKK/64427b5f711cf97ba73cae89/-473Wx593H-4933737830-multi-MODEL.jpg",
+      "price": "2302",
+      "Qauntity": "1",
+      "marketstatus": "latest",
+      "status": "instock",
+      "id": 9
+    },
+    {
+      "catagory": "watch",
+      "name": "watch",
+      "image": "https://assets.ajio.com/medias/sys_master/root/20221110/zZkJ/636d2ae6f997ddfdbd6c8752/-473Wx593H-410321639-wct-MODEL.jpg",
+      "price": "1200",
+      "Qauntity": "2",
+      "marketstatus": "upcoming",
+      "status": "instock",
+      "id": 10
     }
   ],
   "catagory": [
     {
+      "id": 1,
       "catagoryName": "shoes"
     },
     {
+      "id": 2,
       "catagoryName": "watch"
     },
     {
+      "id": 3,
       "catagoryName": "tshirt"
     }
   ],
@@ -82,7 +140,26 @@
       "image": "https://i.ibb.co/bQ5t8bR/product-5.jpg",
       "quantity": 1,
       "productId": 5,
+      "price": 400,
       "id": 1
+    },
+    {
+      "name": "men's wear",
+      "image": "https://i.ibb.co/QfCgdXZ/product-8.jpg",
+      "quantity": 1,
+      "productId": 8,
+      "userId": 1,
+      "price": 100,
+      "id": 2
+    },
+    {
+      "name": "men's wear",
+      "image": "https://i.ibb.co/b7ZVzYr/product-2.jpg",
+      "quantity": 1,
+      "productId": 1,
+      "userId": 2,
+      "price": 500,
+      "id": 3
     }
   ]
 }

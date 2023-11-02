@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -13,7 +13,6 @@ const Login = () => {
             if(user.data.length === 0) {
                 alert("not valid!");
                 return false;
-                navigate('/');
             }
             localStorage.setItem('UserLogin',JSON.stringify(user.data[0]));
             setEmail("");
@@ -44,7 +43,7 @@ const Login = () => {
                         <input type="button"className='submit btn' onClick= {()=>handleSubmit()} defaultValue="Submit" style={{width: '100%',borderRadius : '7px'}} />
                     </div>
                 </form>
-                <p className="text--center">Not a remember? <a href="#">Sign up now</a> <svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
+                <p className="text--center">Not a remember? <NavLink to={'/Register'}>Sign up now </NavLink><svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
             </div>
         </body>
 
@@ -52,4 +51,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;

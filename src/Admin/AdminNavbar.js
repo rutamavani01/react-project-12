@@ -1,12 +1,13 @@
 import React from 'react'
+import AdminDashboard from './AdminDashboard'
+import { Outlet } from 'react-router-dom'
 
 const AdminNavbar = () => {
   return (
-    <div>
-      <h1>Admin navabar
-        
-      </h1>
-    </div>
+    <>
+      <AdminDashboard/>
+         <Outlet/>
+    </>
   )
 }
 

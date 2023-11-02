@@ -22,7 +22,7 @@ const Home = () => {
 
   useEffect(() => {
     getAllProducts();
-  })
+  },[])
   return (
     <div>
       <meta charSet="UTF-8" />

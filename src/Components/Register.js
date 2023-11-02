@@ -1,25 +1,29 @@
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    axios.post(`http://localhost:8000/user`, {
-      email: email,
-      password: password
-    })
-    .then((response) => {
-      console.log('User successfully registered', response.data);
-      setEmail('');
-      setPassword('');
-    })
-    .catch((err) => {
-      console.error(err);
-      return false;
+
+    let user = axios.post(`http://localhost:8000/user`,{
+      email : email,
+      password : password
     });
+
+    if(user){
+      console.log(("user succesfully register"));
+      navigate('/Login');
+      setEmail("");
+      setPassword("");
+    }else{
+      console.log("User not register");
+      return false;
+    }
   }
 
   return (
