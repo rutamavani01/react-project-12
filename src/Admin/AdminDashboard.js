@@ -5,14 +5,14 @@ import { NavLink } from 'react-router-dom'
 const AdminDashboard = () => {
   return (
     <>
-      <div className="header">
+      {/* <div className="header">
         <div className="navbar">
           <div className="logo">
             <NavLink><img src="https://i.ibb.co/kDVwgwp/logo.png" alt="RedStore" width="125px" /></NavLink>
           </div>
           <img src="https://i.ibb.co/6XbqwjD/menu.png" alt className="menu-icon" onclick="menutoggle()" />
         </div>
-      </div>
+      </div> */}
 
       <aside id="sidebar" className="sidebar">
         <ul className="sidebar-nav" id="sidebar-nav">
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
             </a>
             <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <NavLink >
+                <NavLink to={'/AdminUser'}>
                   <i className="bi bi-circle" /><span>user</span>
                 </NavLink>
               </li>

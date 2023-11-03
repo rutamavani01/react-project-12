@@ -22,10 +22,7 @@ const Cart = () => {
                 return false;
             })  
         }
-       
     }
-
-    
 
     useEffect(() => {
         getAllCart();

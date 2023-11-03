@@ -25,11 +25,11 @@ const Login = () => {
     }
 
     return (
-       <>
-      <h1 className='align'>Login Page</h1> 
-         <body className="align">
+       <center>
+      <h1 style={{margin: '25px 0 25px 0'}}>Login Page</h1> 
+         <div className="align">
             <div className="grid">
-                <form className="form login">
+                <form className="form login m-5">
                     <div className="form__field">
                         <label htmlFor="login__username"><svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#user" /></svg><span className="hidden">Email</span></label>
                         <input id="login__username" type="text"className="form__input" placeholder="Email" required name='email' onChange={(e)=>setEmail(e.target.value)}
@@ -42,12 +42,11 @@ const Login = () => {
                     <div className="form__field">
                         <input type="button"className='submit btn' onClick= {()=>handleSubmit()} defaultValue="Submit" style={{width: '100%',borderRadius : '7px'}} />
                     </div>
-                </form>
                 <p className="text--center">Not a remember? <NavLink to={'/Register'}>Sign up now </NavLink><svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
+                </form>
             </div>
-        </body>
-
-       </>
+        </div>
+       </center>
     )
 }
 

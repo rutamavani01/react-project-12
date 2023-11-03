@@ -27,9 +27,9 @@ const Register = () => {
   }
 
   return (
-    <>
-      <h1 className='align'>Registration Page</h1>
-      <body className="align">
+    <center>
+      <h1 style={{margin: '25px 0 25px 0'}}>Registration Page</h1>
+      <div className="align">
         <div className="grid">
           <form className="form login">
             <div className="form__field">
@@ -44,12 +44,11 @@ const Register = () => {
             <div className="form__field">
               <input type="button" className='submit btn' onClick={() => handleSubmit()} defaultValue="Submit" style={{ width: '100%', borderRadius: '7px' }} />
             </div>
-          </form>
           <p className="text--center">Not a remember? <a href="#">Sign up now</a> <svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
+          </form>
         </div>
-      </body>
-
-    </>
+      </div>
+    </center>
   )
 }
 

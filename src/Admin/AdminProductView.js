@@ -110,7 +110,7 @@ const AdminProductView = () => {
     return (
         <center>
             <h1>Admin product view page</h1>
-            <table border={1}>
+            <table border={1} style={{width: "55%"}}>
                 <tr>
                     <td>Id</td>
                     <td>name</td>
@@ -154,7 +154,7 @@ const AdminProductView = () => {
                                     </td>
                                     <td>{v.Qauntity}</td>
                                     <td>
-                                        <button onClick={()=>handleDelete(v.id)}>delete</button>
+                                        <button className='btn btn-outline-danger' onClick={()=>handleDelete(v.id)}><i class="fa-solid fa-trash"></i></button>
                                         {/* {
                                             edit ? (<button onClick={()=>handleEdit(v.id)}>Edit</button>)
                                             :(<button onClick={()=>handleEdit(v.id)}>Submit</button>)

@@ -45,22 +45,8 @@ const AdminProduct = () => {
 
   return (
       <center>
-        <h1>admin product page</h1>
+         <h1>admin product page</h1>
         <table border={1}>
-          <tr>
-            <td>category</td>
-            <select name='catagory' onChange={(e)=>setCatagory_name(e.target.value)}>
-              <option value="">catagory</option>
-              {
-                catagory.map((v)=> {
-                  return(
-                    <option value={v.catagoryName}>{v.catagoryName}</option>
-                    
-                  )
-                })
-              }
-            </select>
-          </tr>
           <tr>
             <td>name</td>
             <input type='text' onChange={(e)=>setName(e.target.value)} name='name'/>
@@ -78,9 +64,23 @@ const AdminProduct = () => {
             <input type='text' onChange={(e)=>setQauntity(e.target.value)} name='quantity'/>
           </tr>
           <tr>
+            <td>category</td>
+            <select name='catagory' onChange={(e)=>setCatagory_name(e.target.value)}>
+              <option value="">catagory</option>
+              {
+                catagory.map((v)=> {
+                  return(
+                    <option value={v.catagoryName}>{v.catagoryName}</option>
+                    
+                  )
+                })
+              }
+            </select>
+          </tr>
+          <tr>
             <td>market status</td>
             <td>
-              <select name='status' onChange={(e)=>setMarketstatus(e.target.value)}>
+              <select name='market-status' onChange={(e)=>setMarketstatus(e.target.value)}>
                 <option value="">market-status</option>
                 <option value="upcoming">Upcomming</option>
                 <option value="latest">Latest</option>
@@ -102,9 +102,11 @@ const AdminProduct = () => {
             <td><button type='button' onClick={()=>handleSubmit()}>submit</button></td>
           </tr>
         </table>
+        <div className="nav-button">
         <button >
-          <NavLink to={'/AdminProductView'}>View All PRoducts</NavLink>
+          <NavLink to={'/AdminProductView'}>View All Products</NavLink>
         </button>
+        </div>
       </center>
   )
 }

@@ -13,6 +13,8 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import AdminDashboard from './Admin/AdminDashboard';
 import AdminProductView from './Admin/AdminProductView';
+import AdminUser from './Admin/AdminUser';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 
 function App() {
@@ -30,13 +32,14 @@ function App() {
         </Route>
 
         {/* admin route */}
-        <Route to='/AdminNavbar' element={<AdminNavbar/>}>
         <Route path='/AdminLogin' element={<AdminLogin />}></Route>
         <Route path='/AdminRegistration' element={<AdminRegistration />}></Route>
+        <Route to='/AdminNavbar' element={<AdminNavbar/>}>
        <Route path='/AdminProductView' element={<AdminProductView/>}></Route>
         <Route path='/AdminProduct' element={<AdminProduct />}></Route>
         <Route path='/AdminCatagory' element={<AdminCatagory />}></Route>
         <Route path='/AdminDashboard' element={<AdminDashboard />}></Route>
+        <Route path='/AdminUser' element={<AdminUser/>}></Route>
       </Route>
       </Routes>
     </BrowserRouter>

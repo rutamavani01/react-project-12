@@ -57,7 +57,11 @@
   
   a {
     text-decoration: none;
-    color: #555;
+    color: black;  
+  }
+
+  Link h5 {
+    color: white !important;
   }
   
   p {
@@ -106,6 +110,7 @@
   
   .btn:hover {
     background: #563434;
+    color: white;
   }
   
   .header {
@@ -146,12 +151,16 @@
   }
   
   .col-4 img {
-    width: 100%;
+    width: 90%;
   }
-  
+.btn a {
+  color: white;
+}
+.btn a:hover{
+  color: white;
+}
   .title {
     text-align: center;
-    margin: 0 auto 80px;
     position: relative;
     line-height: 60px;
     color: #555;
@@ -345,7 +354,7 @@
   }
 
   /* catagory[Product page] */
-  .category { margin-bottom: 30px; }
+  .category { margin: 20px 0 20px 0;}
 
 .category-item-container {
   display: flex;
@@ -402,11 +411,12 @@
   text-transform: capitalize;
 }
 
+
 /* side bar */
 
 .sidebar {
-  /* background: var(--white); */
-  /* position: fixed; */
+  background: var(--white);
+  position: fixed;
   top: 0;
   left: -100%;
   bottom: 0;
@@ -416,7 +426,7 @@
   overflow-y: scroll;
   overscroll-behavior: contain;
   /* visibility: hidden; */
-  /* transition: 0.5s ease; */
+  transition: 0.5s ease;
   z-index: 20;
 }
 
@@ -818,7 +828,7 @@
           align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  /* display: flex; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -827,16 +837,23 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
 /* helpers/grid.css */
 
-.grid {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 320px;
-  max-width: 20rem;
-  width: 90%;
-}
+
+  .grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px; /* or max-width: 20rem; */
+    width: 90%;
+  }
+  
+
 
 /* helpers/hidden.css */
 
@@ -951,6 +968,7 @@ input {
 
 .login {
   color: #eee;
+  margin: 50px 0 50px 0;
 }
 
 .login label,
@@ -1002,15 +1020,18 @@ input {
 /* modules/text.css */
 
 p {
-  margin-bottom: 24px;
+  /* margin-bottom: 24px;
   margin-bottom: 1.5rem;
   margin-top: 24px;
-  margin-top: 1.5rem;
+  margin-top: 1.5rem; */
 }
 
 .text--center {
   text-align: center;
 }
+
+
+
 
 /* dashboard---sidebar */
 .dashboard-sidebar {
@@ -1061,7 +1082,7 @@ body {
 }
 
 a {
-  color: #4154f1;
+  /* color: #4154f1; */
   text-decoration: none;
 }
 
@@ -2228,23 +2249,6 @@ h6 {
   line-height: 150px;
 }
 
-.error-404 h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #012970;
-  margin-bottom: 30px;
-}
-
-.error-404 .btn {
-  background: #51678f;
-  color: #fff;
-  padding: 8px 30px;
-}
-
-.error-404 .btn:hover {
-  background: #3e4f6f;
-}
-
 @media (min-width: 992px) {
   .error-404 img {
     max-width: 50%;
@@ -2271,4 +2275,60 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+/* AdminProduct */
+.center-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+table {
+  width: 40%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 2px solid black;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+select, input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+.nav-button {
+  margin-top: 20px;
+}
+
+.nav-button a {
+  text-decoration: none;
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.nav-button a:hover {
+  background-color: #005F6B;
 }

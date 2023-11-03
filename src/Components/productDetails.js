@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import UserLogin from '../User/Userauth';
 
 const ProductDetails = () => {
     const navigate = useNavigate();
-    const {productId} = useParams();
-    const [product,setProduct] = useState({});
+    const { productId } = useParams();
+    const [product, setProduct] = useState({});
 
     const getSingleProductRecord = async () => {
         try {
@@ -74,28 +74,28 @@ const ProductDetails = () => {
                 <div className="showcase-container">
                     <div className="showcase row">
                         <div className="showcase-banner col-md-4">
-                            <img src={product.image} style={{width: '300px'}} className="showcase-img" />
+                            <img src={product.image} style={{ width: '300px' }} className="showcase-img" />
                         </div>
                         <div className="showcase-content col-md-6">
                             <div className="showcase-rating">
-                                <ion-icon name="star" />
-                                <ion-icon name="star" />
-                                <ion-icon name="star" />
-                                <ion-icon name="star-outline" />
-                                <ion-icon name="star-outline" />
+                                <i className="fas fa-star" />
+                                <i className="fas fa-star" />
+                                <i className="fas fa-star" />
+                                <i className="fas fa-star" />
+                                <i className="far fa-star" />
                             </div>
                             <a href="#">
-                                <h3 className="showcase-title">shampoo, conditioner &amp; facewash packs</h3>
+                                <h2 className="showcase-title fw-bold">shampoo, conditioner &amp; facewash packs</h2>
                             </a>
-                            <p className="showcase-desc">
+                            <h3 className="showcase-desc">
                                 Lorem ipsum dolor sit amet consectetur Lorem ipsum
                                 dolor dolor sit amet consectetur Lorem ipsum dolor
-                            </p>
+                            </h3>
+                            <del>$500.00</del>
                             <div className="price-box">
-                                <p className="price">$150.00</p>
-                                <del>$200.00</del>
+                                <h4>Rs: {product.price} only</h4>
                             </div>
-                            <button onClick={()=>Addtocart(product.id)} className="add-cart-btn btn btn-primary">add to cart</button>
+                            <button onClick={() => Addtocart(product.id)} className="add-cart-btn btn btn-primary">add to cart</button>
                             <div className="showcase-status">
                                 <div className="wrapper">
                                     <p>
@@ -105,7 +105,6 @@ const ProductDetails = () => {
                                         available: <b>40</b>
                                     </p>
                                 </div>
-                                <div className="showcase-status-bar" />
                             </div>
                             <div className="countdown-box">
                                 <p className="countdown-desc">
@@ -132,8 +131,13 @@ const ProductDetails = () => {
                             </div>
                         </div>
                     </div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <NavLink to={'/product'}>
+                            <button className='btn'>continue shopping</button>
+                        </NavLink>
+                    </div>
                 </div>
-               
+
             </div>
         </div>
 

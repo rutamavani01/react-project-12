@@ -122,8 +122,8 @@
   ],
   "catagory": [
     {
-      "id": 1,
-      "catagoryName": "shoes"
+      "catagoryName": "shoes",
+      "id": 1
     },
     {
       "id": 2,
@@ -160,6 +160,14 @@
       "userId": 2,
       "price": 500,
       "id": 3
+    },
+    {
+      "name": "men's wear",
+      "image": "https://i.ibb.co/0cMfpcr/product-4.jpg",
+      "price": 200,
+      "productId": 3,
+      "userId": 1,
+      "id": 4
     }
   ]
 }

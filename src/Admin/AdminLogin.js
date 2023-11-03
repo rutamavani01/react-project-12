@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -25,10 +25,10 @@ const AdminLogin = () => {
     }
 
     return (
-       <>
-      <h1 className='align'>Admin Login Page</h1> 
-         <body className="align">
-            <div className="grid">
+      <center>
+        <h1 className=''>Admin Login Page</h1> 
+        <div className="login-container justify-content-center">
+            <body className="grid">
                 <form className="form login">
                     <div className="form__field">
                         <label htmlFor="login__username"><svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#user" /></svg><span className="hidden">Email</span></label>
@@ -42,12 +42,12 @@ const AdminLogin = () => {
                     <div className="form__field">
                         <input type="button"className='submit btn' onClick= {()=>handleSubmit()} defaultValue="Submit" style={{width: '100%',borderRadius : '7px'}} />
                     </div>
+                <p className="text--center">Not a remember? <NavLink to={'/AdminRegistration'}>Sign up now </NavLink> <svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
                 </form>
-                <p className="text--center">Not a remember? <a href="#">Sign up now</a> <svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
-            </div>
-        </body>
-
-       </>
+            </body>
+        </div>
+      </center>
+    
     )
 }
 
