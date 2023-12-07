@@ -11,7 +11,7 @@ const AdminProduct = () => {
   const [name,setName] = useState("");
   const [image,setImage] = useState("");
   const [price,setPrice] = useState("");
-  const [Qauntity,setQauntity] = useState("");
+  const [quantity,setquantity] = useState("");
   const [marketstatus,setMarketstatus] = useState("");
   const [status,setStatus] = useState("");
 
@@ -21,7 +21,7 @@ const AdminProduct = () => {
       name:name,
       image : image,
       price : price,
-      Qauntity,Qauntity,
+      quantity,quantity,
       marketstatus : marketstatus,
       status : status
     }).then((res)=> {
@@ -44,8 +44,9 @@ const AdminProduct = () => {
   },[])
 
   return (
-      <center>
-         <h1>admin product page</h1>
+    <main id="main" class="main">
+       <center>
+       <h1>admin product page</h1>
         <table border={1}>
           <tr>
             <td>name</td>
@@ -61,7 +62,7 @@ const AdminProduct = () => {
           </tr>
           <tr>
             <td>quantity</td>
-            <input type='text' onChange={(e)=>setQauntity(e.target.value)} name='quantity'/>
+            <input type='text' onChange={(e)=>setquantity(e.target.value)} name='quantity'/>
           </tr>
           <tr>
             <td>category</td>
@@ -107,7 +108,8 @@ const AdminProduct = () => {
           <NavLink to={'/AdminProductView'}>View All Products</NavLink>
         </button>
         </div>
-      </center>
+       </center>
+      </main>
   )
 }
 

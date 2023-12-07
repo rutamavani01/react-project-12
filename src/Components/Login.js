@@ -29,7 +29,7 @@ const Login = () => {
       <h1 style={{margin: '25px 0 25px 0'}}>Login Page</h1> 
          <div className="align">
             <div className="grid">
-                <form className="form login m-5">
+                <form className="form login ">
                     <div className="form__field">
                         <label htmlFor="login__username"><svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#user" /></svg><span className="hidden">Email</span></label>
                         <input id="login__username" type="text"className="form__input" placeholder="Email" required name='email' onChange={(e)=>setEmail(e.target.value)}

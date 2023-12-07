@@ -31,7 +31,7 @@ const ProductDetails = () => {
             axios.get(`http://localhost:8000/carts?productId=${productId}&userId=${UserLogin().id}`)
                 .then((res) => {
                     if (res.data.length > 0) {
-                        alert("Product already add in cart")
+                        alert("Product added in cart");
                         return false
                     } else {
                         axios.get(`http://localhost:8000/product/${productId}`)
@@ -46,7 +46,8 @@ const ProductDetails = () => {
                                     productId: productId,
                                     userId: UserLogin().id
                                 }).then((res) => {
-                                    alert("Product successfully add");
+                                    alert("Product successfully added");
+                                    navigate('/Cart')
                                 }).catch((err) => {
                                     console.log(err);
                                     return false;
@@ -145,4 +146,4 @@ const ProductDetails = () => {
     )
 }
 
-export default ProductDetails
+export default ProductDetails;

@@ -1,136 +1,103 @@
 import React from 'react'
-import '../style.css'
-import { NavLink } from 'react-router-dom'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const AdminDashboard = () => {
+  const [usercnt,setUserCnt] = useState(0);
+  const [categorycnt,setCategory] = useState(0);
+  const [productcnt,setProduct] = useState(0);
+
+  useEffect(()=>{
+      axios.get(`http://localhost:8000/user`).then((res)=>{
+          setUserCnt(res.data.length)
+      }).catch((err)=>{
+        console.log(err);
+        return false
+      })
+
+      axios.get(`http://localhost:8000/catagory`).then((res)=>{
+        setCategory(res.data.length)
+    }).catch((err)=>{
+      console.log(err);
+      return false
+    })
+
+    axios.get(`http://localhost:8000/product`).then((res)=>{
+      setProduct(res.data.length)
+    }).catch((err)=>{
+      console.log(err);
+      return false
+    })
+  },[])
   return (
-    <>
-      {/* <div className="header">
-        <div className="navbar">
-          <div className="logo">
-            <NavLink><img src="https://i.ibb.co/kDVwgwp/logo.png" alt="RedStore" width="125px" /></NavLink>
+    <main id="main" class="main">
+    <div className='container'>
+      <div class="align-center">
+        <div className='row justify-content-center'>
+
+              <div className="col-3 col-md-6">
+              <div className="card info-card sales-card">
+                <div className="card-body">
+                  <h5 className="card-title">User <span>| count</span></h5>
+                  <div className="d-flex align-items-center">
+                    <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i className="bi bi-cart" />
+                    </div>
+                    <div className="ps-3">
+                      <h6>{usercnt}</h6>
+                      <span className="text-success small pt-1 fw-bold">12%</span> <span className="text-muted small pt-2 ps-1">increase</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <div class="col-3 col-md-6">
+            <div class="card info-card revenue-card">
+              <div class="card-body">
+                <h5 class="card-title">catagory <span>| This Month</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-currency-dollar"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{categorycnt}</h6>
+                    <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <img src="https://i.ibb.co/6XbqwjD/menu.png" alt className="menu-icon" onclick="menutoggle()" />
+          <div class="col-3 col-6">
+
+            <div class="card info-card customers-card">
+              <div class="card-body">
+                <h5 class="card-title">product <span>| This Year</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{productcnt}</h6>
+                    <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div> */}
+      </div>
 
-      <aside id="sidebar" className="sidebar">
-        <ul className="sidebar-nav" id="sidebar-nav">
-          <li className="nav-item">
-            <a className="nav-link " href="index.html">
-              <i className="bi bi-grid" />
-              <span>Dashboard</span>
-            </a>
-          </li>{/* End Dashboard Nav */}
-          <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-menu-button-wide" /><span>Components</span><i className="bi bi-chevron-down ms-auto" />
-            </a>
-            <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-                <NavLink to={'/AdminUser'}>
-                  <i className="bi bi-circle" /><span>user</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={'/AdminProduct'}>
-                  <i className="bi bi-circle" /><span>product</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={'/AdminCatagory'}>
-                  <i className="bi bi-circle" /><span>category</span>
-                </NavLink>
-              </li>
-            </ul>
-          </li>{/* End Components Nav */}
-
-          <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-layout-text-window-reverse" /><span>Tables</span><i className="bi bi-chevron-down ms-auto" />
-            </a>
-            <ul id="tables-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-                <a href="tables-general.html">
-                  <i className="bi bi-circle" /><span>General Tables</span>
-                </a>
-              </li>
-              <li>
-                <a href="tables-data.html">
-                  <i className="bi bi-circle" /><span>Data Tables</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-bar-chart" /><span>Charts</span><i className="bi bi-chevron-down ms-auto" />
-            </a>
-            <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-                <a href="charts-chartjs.html">
-                  <i className="bi bi-circle" /><span>Chart.js</span>
-                </a>
-              </li>
-              <li>
-                <a href="charts-apexcharts.html">
-                  <i className="bi bi-circle" /><span>ApexCharts</span>
-                </a>
-              </li>
-              <li>
-                <a href="charts-echarts.html">
-                  <i className="bi bi-circle" /><span>ECharts</span>
-                </a>
-              </li>
-            </ul>
-          </li>{/* End Charts Nav */}
-
-          <li className="nav-heading">Pages</li>
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="users-profile.html">
-              <i className="bi bi-person" />
-              <span>Profile</span>
-            </a>
-          </li>{/* End Profile Page Nav */}
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-faq.html">
-              <i className="bi bi-question-circle" />
-              <span>F.A.Q</span>
-            </a>
-          </li>{/* End F.A.Q Page Nav */}
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-contact.html">
-              <i className="bi bi-envelope" />
-              <span>Contact</span>
-            </a>
-          </li>{/* End Contact Page Nav */}
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-register.html">
-              <i className="bi bi-card-list" />
-              <span>Register</span>
-            </a>
-          </li>{/* End Register Page Nav */}
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-login.html">
-              <i className="bi bi-box-arrow-in-right" />
-              <span>Login</span>
-            </a>
-          </li>{/* End Login Page Nav */}
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-error-404.html">
-              <i className="bi bi-dash-circle" />
-              <span>Error 404</span>
-            </a>
-          </li>{/* End Error 404 Page Nav */}
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-blank.html">
-              <i className="bi bi-file-earmark" />
-              <span>Blank</span>
-            </a>
-          </li>{/* End Blank Page Nav */}
-        </ul>
-      </aside>
-    </>
+    </div>
+    </main>
 
   )
 }

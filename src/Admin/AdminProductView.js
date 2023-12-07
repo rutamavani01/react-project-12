@@ -8,7 +8,8 @@ const AdminProductView = () => {
     const [edit,setEdit] = useState("");
     const [name,setName] = useState("");
     const [price,setPrice] = useState("");
-    const [Qauntity,setQauntity] = useState("");
+    const [quantity,setquantity] = useState("");
+
 
     const UpdateMarketStatus = (updateId,value) => {
         axios.patch(`http://localhost:8000/product/${updateId}`, {
@@ -108,8 +109,9 @@ const AdminProductView = () => {
     },[])
 
     return (
-        <center>
-            <h1>Admin product view page</h1>
+        <main id="main" class="main">
+            {/* <h1>Admin product view page</h1> */}
+            <div>
             <table border={1} style={{width: "55%"}}>
                 <tr>
                     <td>Id</td>
@@ -152,7 +154,7 @@ const AdminProductView = () => {
                                             }
                                         </select>
                                     </td>
-                                    <td>{v.Qauntity}</td>
+                                    <td>{v.quantity}</td>
                                     <td>
                                         <button className='btn btn-outline-danger' onClick={()=>handleDelete(v.id)}><i class="fa-solid fa-trash"></i></button>
                                         {/* {
@@ -166,7 +168,8 @@ const AdminProductView = () => {
                     }
                 </tbody>
             </table>
-        </center>
+            </div>
+        </main>
     )
 }
 

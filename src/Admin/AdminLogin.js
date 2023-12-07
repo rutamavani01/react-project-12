@@ -42,7 +42,9 @@ const AdminLogin = () => {
                     <div className="form__field">
                         <input type="button"className='submit btn' onClick= {()=>handleSubmit()} defaultValue="Submit" style={{width: '100%',borderRadius : '7px'}} />
                     </div>
-                <p className="text--center">Not a remember? <NavLink to={'/AdminRegistration'}>Sign up now </NavLink> <svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
+                <NavLink to={'/AdminForgotPwd'}>Not a remember? </NavLink>
+                <NavLink to={'/AdminRegistration'}>Sign up now </NavLink>
+                   
                 </form>
             </body>
         </div>

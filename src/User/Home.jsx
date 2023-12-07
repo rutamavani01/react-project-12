@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../style.css'
+
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -43,7 +43,7 @@ const Home = () => {
             Success isn't always about greatness. It's about consistency.
             Consistent <br />hard work gains success. Greatness will come.
           </p>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="btn">Explore Now →</a>
+          <a href="/Product" target="_blank" rel="noopener noreferrer" className="btn">Explore Now →</a>
         </div>
         <div className="col-2">
           <img src="https://i.ibb.co/QpTmdX5/image1.png" alt />
@@ -76,9 +76,7 @@ const Home = () => {
               return (
                 <div className="col-4">
                   <a href="product_details.html"><img src={v.image} alt /></a>
-                  <a href="product_details.html">
-                    <h4>{v.name}</h4>
-                  </a>
+                  
                   <div className="rating">
                     <i className="fas fa-star" />
                     <i className="fas fa-star" />
@@ -86,6 +84,9 @@ const Home = () => {
                     <i className="fas fa-star" />
                     <i className="far fa-star" />
                   </div>
+                  <a href="product_details.html">
+                    <h5>{v.name}</h5>
+                  </a>
                   <p>₹500.00</p>
                   <button className='btn btn-primary' onClick={()=>AddtoCart()}>Add + </button>
                 </div>

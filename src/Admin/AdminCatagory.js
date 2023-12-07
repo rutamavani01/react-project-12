@@ -71,13 +71,13 @@ const AdminCatagory = () => {
   },[])
 
   return (
-    <center>
-        <h1>Admin catagory</h1>
-
+    <main id="main" class="main">
+       <center>
+       <h1>Admin catagory</h1>
         <table border={1}>
                 <tbody>
                     <tr>
-                        <td>Category :-</td>
+                        <td>Category :</td>
                         <td><input type="category" onChange={(e) => setcatagoryName(e.target.value)} value={catagoryName} name="catagoryName" placeholder="Enter category" /></td>
                     </tr>
                     <tr>
@@ -85,8 +85,8 @@ const AdminCatagory = () => {
                         <td>
                         
                             {
-                                edit ? (  <button onClick={()=>handleSubmit()}>Edit</button>)
-                                        : (  <button onClick={()=>handleSubmit()}>submit</button>)
+                                edit ? (  <button  onClick={()=>handleSubmit()}>Edit</button>)
+                                        : (  <button onClick={()=>handleSubmit()}>Submit</button>)
                             }
                         </td>
                     </tr>
@@ -107,8 +107,8 @@ const AdminCatagory = () => {
                     <td>{v.id}</td>
                     <td>{v.catagoryName}</td>
                     <td>
-                      <button onClick={()=>handleDelete(v.id)}>delete</button>
-                      <button onClick={()=>handleEdit(v.id)}>edit</button>
+                      <button className='m-2'  onClick={()=>handleDelete(v.id)}>Delete</button>
+                      <button className='m-2'  onClick={()=>handleEdit(v.id)}>Edit</button>
                     </td>
                   </tr>
                 )
@@ -116,7 +116,8 @@ const AdminCatagory = () => {
           }
          </tbody>
         </table>
-    </center>
+       </center>
+    </main>
   )
 }
 

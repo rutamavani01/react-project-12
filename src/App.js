@@ -14,7 +14,14 @@ import Register from './Components/Register';
 import AdminDashboard from './Admin/AdminDashboard';
 import AdminProductView from './Admin/AdminProductView';
 import AdminUser from './Admin/AdminUser';
+import Cart from './Components/Cart';
 import '@fortawesome/fontawesome-free/css/all.css';
+import AdminHeader from './Admin/AdminHeader';
+import AdminUserDetail from './Admin/AdminUserDetail';
+import AdminForgotPwd from './Admin/AdminForgotPwd';
+import Otp from './Admin/Otp';
+import AdminNewPass from './Admin/AdminNewPass';
+import AdminProfile from './Admin/AdminProfile';
 
 
 function App() {
@@ -29,18 +36,26 @@ function App() {
           <Route path='/Login' element={<Login />}></Route>
           <Route path='/Register' element={<Register />}></Route>
           <Route path='/ProductDetails/:productId' element={<ProductDetails />}></Route>
+          <Route path='/Cart' element={<Cart />}></Route>
         </Route>
 
-        {/* admin route */}
+        {/* Admin routes */}
         <Route path='/AdminLogin' element={<AdminLogin />}></Route>
         <Route path='/AdminRegistration' element={<AdminRegistration />}></Route>
-        <Route to='/AdminNavbar' element={<AdminNavbar/>}>
-       <Route path='/AdminProductView' element={<AdminProductView/>}></Route>
-        <Route path='/AdminProduct' element={<AdminProduct />}></Route>
-        <Route path='/AdminCatagory' element={<AdminCatagory />}></Route>
-        <Route path='/AdminDashboard' element={<AdminDashboard />}></Route>
-        <Route path='/AdminUser' element={<AdminUser/>}></Route>
-      </Route>
+        <Route path='/AdminForgotPwd' element={<AdminForgotPwd />}></Route>
+          <Route path='/AdminNewPass/:token' element={<AdminNewPass/>}></Route>
+          <Route path='/Otp' element={<Otp/>}></Route>
+
+        <Route path='/' element={<AdminNavbar />}>
+          <Route path='/AdminHeader' element={<AdminHeader />}></Route>
+          <Route path='/AdminProductView' element={<AdminProductView />}></Route>
+          <Route path='AdminProfile' element={<AdminProfile/>}></Route>
+          <Route path='/AdminUserDetail/:userId' element={<AdminUserDetail />}></Route>
+          <Route path='/AdminProduct' element={<AdminProduct />}></Route>
+          <Route path='/AdminCatagory' element={<AdminCatagory />}></Route>
+          <Route path='/AdminDashboard' element={<AdminDashboard />}></Route>
+          <Route path='/AdminUser' element={<AdminUser />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

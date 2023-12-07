@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const AdminRegistration = () => {
   const navigate = useNavigate();
@@ -43,7 +44,8 @@ const AdminRegistration = () => {
                   <div className="form__field">
                       <input type="button"className='submit btn' onClick= {()=>handleSubmit()} defaultValue="Submit" style={{width: '100%',borderRadius : '7px'}} />
                   </div>
-              <p className="text--center">Not a remember? <a href="#">Sign up now</a> <svg className="icon"><use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="assets/images/icons.svg#arrow-right" /></svg></p>
+                  <NavLink to={'/AdminForgotPwd'} >Not a remember? </NavLink>
+                <NavLink to={'/AdminRegistration'}>Sign up now </NavLink>
               </form>
           </div>
       </body>
